@@ -8,15 +8,6 @@
             </a>
         </li>
 
-        @if(session()->has('user') && session('user')->acesso === 'dm')
-            <li>
-                <a href="{{ route('users.index') }}"
-                   class="nav-link d-flex align-items-center {{ request()->routeIs('usuarios.*') ? 'active' : 'text-dark' }}">
-                    <i class="fa-solid fa-user-gear me-2"></i> Usuário
-                </a>
-            </li>
-        @endif
-
         <li>
             <a href="{{ route('personagens.index') }}"
                 class="nav-link d-flex align-items-center {{ request()->routeIs('personagens.*') ? 'active' : 'text-dark' }}">
@@ -24,31 +15,35 @@
             </a>
         </li>
 
-        @if(session()->has('user') && session('user')->acesso === 'dm')
+        @if(auth()->check() && auth()->user()->acesso === 'dm')
+            <li>
+                <a href="{{ route('users.index') }}"
+                   class="nav-link d-flex align-items-center {{ request()->routeIs('usuarios.*') ? 'active' : 'text-dark' }}">
+                    <i class="fa-solid fa-user-gear me-2"></i> Usuário
+                </a>
+            </li>
+
+
             <li>
                 <a href="{{ route('monstros.index') }}"
                    class="nav-link d-flex align-items-center {{ request()->routeIs('monstros.*') ? 'active' : 'text-dark' }}">
                     <i class="fa-solid fa-dragon me-2"></i> Monstros
                 </a>
             </li>
-        @endif
 
-        @if(session()->has('user') && session('user')->acesso === 'dm')
             <li>
                 <a href="{{ route('mapas.index') }}"
-                    class="nav-link d-flex align-items-center {{ request()->routeIs('personagens.*') ? 'active' : 'text-dark' }}">
+                    class="nav-link d-flex align-items-center {{ request()->routeIs('mapas.*') ? 'active' : 'text-dark' }}">
                     <i class="fa-solid fa-map me-2"></i> Mapas
                 </a>
             </li>
-        @endif
 
-        @if(session()->has('user') && session('user')->acesso === 'dm')
-            <li>
-                <a href="{{ route('mapas.index') }}"
+            {{-- <li>
+                <a href="{{ route('quartos.index') }}"
                     class="nav-link d-flex align-items-center {{ request()->routeIs('personagens.*') ? 'active' : 'text-dark' }}">
                     <i class="fa-solid fa-map me-2"></i> Quartos
                 </a>
-            </li>
+            </li> --}}
         @endif
     </ul>
 </div>
