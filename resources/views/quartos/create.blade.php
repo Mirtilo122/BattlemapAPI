@@ -18,7 +18,7 @@
             <input type="number" name="y" class="form-control" min="1" required>
         </div>
         <div class="form-check mb-3">
-            <input type="checkbox" name="inicial" class="form-check-input" id="inicial">
+            <input type="checkbox" name="inicial" value="1" class="form-check-input" id="inicial">
             <label for="inicial" class="form-check-label">Quarto Inicial</label>
         </div>
         <button type="submit" class="btn btn-success">Criar</button>

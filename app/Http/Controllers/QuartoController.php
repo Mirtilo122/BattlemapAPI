@@ -23,7 +23,6 @@ class QuartoController extends Controller
         return view('quartos.index', compact('quartos', 'mapaId'));
     }
 
-    // Formulário de criação de quarto
     public function create($mapaId)
     {
         return view('quartos.create', compact('mapaId'));

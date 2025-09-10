@@ -23,6 +23,8 @@ class QuartoService
     {
         $this->verificarDM();
 
+        $dados['inicial'] = isset($dados['inicial']) ? 1 : 0;
+
         return Quarto::create($dados);
     }
 
@@ -32,6 +34,8 @@ class QuartoService
     public function atualizarQuarto(Quarto $quarto, array $dados)
     {
         $this->verificarDM();
+
+        $dados['inicial'] = isset($dados['inicial']) ? 1 : 0;;
 
         return $quarto->update($dados);
     }

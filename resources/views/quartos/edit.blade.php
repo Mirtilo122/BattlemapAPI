@@ -20,7 +20,7 @@
             <input type="number" name="y" class="form-control" value="{{ $quarto->y }}" min="1" required>
         </div>
         <div class="form-check mb-3">
-            <input type="checkbox" name="inicial" class="form-check-input" id="inicial" {{ $quarto->inicial ? 'checked' : '' }}>
+            <input type="checkbox" value="1" name="inicial" class="form-check-input" id="inicial" {{ $quarto->inicial ? 'checked' : '' }}>
             <label for="inicial" class="form-check-label">Quarto Inicial</label>
         </div>
         <button type="submit" class="btn btn-success">Salvar</button>
