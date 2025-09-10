@@ -22,4 +22,10 @@ class Personagem extends Model
     {
         return $this->belongsTo(User::class, 'owner_id');
     }
+
+    public function itens()
+    {
+        return $this->belongsToMany(Item::class, 'item_personagem', 'personagem_id', 'item_id')
+                    ->withTimestamps();
+    }
 }

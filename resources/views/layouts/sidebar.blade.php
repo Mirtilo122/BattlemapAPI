@@ -15,10 +15,31 @@
             </a>
         </li>
 
+        <li>
+            <a href="{{ route('melhorias.index') }}"
+                class="nav-link d-flex align-items-center {{ request()->routeIs('melhorias.*') ? 'active' : 'text-dark' }}">
+                <i class="fa-solid fa-wrench me-2"></i> Melhorias
+            </a>
+        </li>
+
+        <li>
+            <a href="{{ route('maldicoes.index') }}"
+                class="nav-link d-flex align-items-center {{ request()->routeIs('maldicoes.*') ? 'active' : 'text-dark' }}">
+                <i class="fa-solid fa-eye me-2"></i> Maldições
+            </a>
+        </li>
+
+        <li>
+            <a href="{{ route('itens.index') }}"
+                class="nav-link d-flex align-items-center {{ request()->routeIs('itens.*') ? 'active' : 'text-dark' }}">
+                <i class="fa-solid fa-gift me-2"></i> Itens
+            </a>
+        </li>
+
         @if(auth()->check() && auth()->user()->acesso === 'dm')
             <li>
                 <a href="{{ route('users.index') }}"
-                   class="nav-link d-flex align-items-center {{ request()->routeIs('usuarios.*') ? 'active' : 'text-dark' }}">
+                   class="nav-link d-flex align-items-center {{ request()->routeIs('users.*') ? 'active' : 'text-dark' }}">
                     <i class="fa-solid fa-user-gear me-2"></i> Usuário
                 </a>
             </li>
@@ -35,6 +56,20 @@
                 <a href="{{ route('mapas.index') }}"
                     class="nav-link d-flex align-items-center {{ request()->routeIs('mapas.*') ? 'active' : 'text-dark' }}">
                     <i class="fa-solid fa-map me-2"></i> Mapas
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ route('tags.index') }}"
+                    class="nav-link d-flex align-items-center {{ request()->routeIs('tags.*') ? 'active' : 'text-dark' }}">
+                    <i class="fa-solid fa-tag me-2"></i> Tags
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ route('tipos_subtipos.index') }}"
+                    class="nav-link d-flex align-items-center {{ request()->routeIs('tipos_subtipos.*') ? 'active' : 'text-dark' }}">
+                    <i class="fa-solid fa-cubes me-2"></i> Tipos de Itens
                 </a>
             </li>
 

@@ -14,5 +14,6 @@
 <img src="{{ $personagem->imagem_token }}" alt="token" width="100">
 
 <p><strong>Deslocamento:</strong> {{ $personagem->deslocamento }}</p>
-<p><strong>Dono:</strong> {{ $personagem->owner->name }}</p>
+<p><strong>Dono:</strong> {{ $personagem->owner->nome }}</p>
 @endsection
+ 
