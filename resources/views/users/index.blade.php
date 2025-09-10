@@ -5,10 +5,6 @@
     <h1>Usuários</h1>
     <a href="{{ route('users.create') }}" class="btn btn-primary mb-3">Novo Usuário</a>
 
-    @if(session('success'))
-        <div class="alert alert-success">{{ session('success') }}</div>
-    @endif
-
     <table class="table table-bordered">
         <thead>
             <tr>

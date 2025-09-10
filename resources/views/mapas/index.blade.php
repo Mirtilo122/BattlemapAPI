@@ -4,7 +4,7 @@
 <div class="d-flex justify-content-between align-items-center mb-3">
     <h2>Mapas</h2>
 
-    @if(session('user') && session('user')->acesso === 'dm')
+    @if(auth()->check() && auth()->user()->acesso === 'dm')
         <a href="{{ route('mapas.create') }}" class="btn btn-primary">Criar Mapa</a>
     @endif
 </div>
@@ -24,7 +24,7 @@
                 <td>{{ $mapa->descricao }}</td>
                 <td>
                     <a href="{{ route('mapas.show', $mapa) }}" class="btn btn-sm btn-info">Acessar</a>
-                    @if(session('user') && session('user')->acesso === 'dm')
+                    @if(auth()->check() && auth()->user()->acesso === 'dm')
                         <a href="{{ route('mapas.edit', $mapa) }}" class="btn btn-sm btn-warning">Editar</a>
                         <form action="{{ route('mapas.destroy', $mapa) }}" method="POST" class="d-inline">
                             @csrf @method('DELETE')

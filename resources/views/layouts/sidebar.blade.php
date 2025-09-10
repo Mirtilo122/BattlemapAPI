@@ -21,7 +21,7 @@
                 <i class="fa-solid fa-wrench me-2"></i> Melhorias
             </a>
         </li>
-
+ 
         <li>
             <a href="{{ route('maldicoes.index') }}"
                 class="nav-link d-flex align-items-center {{ request()->routeIs('maldicoes.*') ? 'active' : 'text-dark' }}">
