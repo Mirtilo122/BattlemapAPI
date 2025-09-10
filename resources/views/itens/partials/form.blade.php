@@ -10,7 +10,7 @@
 
 <div class="mb-3">
     <label>Habilidade</label>
-    <input type="text" name="habilidade" class="form-control" value="{{ old('habilidade', $item->habilidade ?? '') }}">
+    <textarea name="habilidade" class="form-control">{{ old('habilidade', $item->habilidade ?? '') }}</textarea>
 </div>
 
 <div class="mb-3">
