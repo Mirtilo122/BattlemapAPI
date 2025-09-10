@@ -87,7 +87,13 @@
 
 <div class="mb-3">
     <label>Espaço</label>
-    <input type="number" name="espaco" class="form-control" value="{{ old('espaco', $item->espaco ?? 1) }}">
+    <input
+        type="number"
+        name="espaco"
+        class="form-control"
+        value="{{ old('espaco', $item->espaco ?? 1) }}"
+        step="0.1"
+        min="0">
 </div>
 
 <div class="mb-3">

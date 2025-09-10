@@ -88,7 +88,7 @@
                                         <strong>{{ $item->tipo->nome ?? '' }}</strong>
                                         - {{ $item->subtipo->nome ?? '' }}<br>
                                         Categoria: {{ $item->categoria }}<br>
-                                        Valor: {{ $item->valor }} moedas<br>
+                                        Valor: {{ rtrim(rtrim(number_format($item->valor, 2, ',', ''), '0'), ',') }} Coroas<br>
                                         Elemento: {{ $item->elemento }}
                                     </p>
                                     <p>{{ $item->descricao }}</p>

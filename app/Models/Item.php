@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 
 class Item extends Model
 {
@@ -17,6 +18,14 @@ class Item extends Model
         'originalidade', 'guia',
         'raridade', 'categoria', 'elemento', 'espaco', 'valor'
     ];
+
+    protected function espaco(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($value) => $value / 10,
+            set: fn ($value) => $value * 10
+        );
+    }
 
     public function tipo()
     {
